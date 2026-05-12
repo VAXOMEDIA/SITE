@@ -2,16 +2,34 @@
 <html>
 
 <head>
-  <title>reCAPTCHA Test</title>
+  <title>Captcha Protection</title>
 
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <script>
+    function unlockPage() {
+
+      var response = grecaptcha.getResponse();
+
+      if(response.length == 0) {
+
+        alert("Please complete captcha");
+
+      } else {
+
+        window.location.href =
+        "https://sites.google.com/view/YOUR-PAGE";
+
+      }
+
+    }
+  </script>
+
 </head>
 
 <body>
 
-<h2>Google reCAPTCHA</h2>
-
-<form>
+<h2>Verify First</h2>
 
 <div class="g-recaptcha"
 data-sitekey="6LcWHucsAAAAAGE104UF7U_D9jAAt3W8VYuUekOv">
@@ -19,11 +37,9 @@ data-sitekey="6LcWHucsAAAAAGE104UF7U_D9jAAt3W8VYuUekOv">
 
 <br>
 
-<button type="submit">
-Submit
+<button onclick="unlockPage()">
+Continue
 </button>
-
-</form>
 
 </body>
 </html>
