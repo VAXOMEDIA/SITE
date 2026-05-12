@@ -2,28 +2,31 @@
 <html>
 
 <head>
-  <title>Captcha Protection</title>
 
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<title>Captcha Gate</title>
 
-  <script>
-    function unlockPage() {
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-      var response = grecaptcha.getResponse();
+<script>
 
-      if(response.length == 0) {
+function unlockPage() {
+
+    var response = grecaptcha.getResponse();
+
+    if(response.length == 0) {
 
         alert("Please complete captcha");
 
-      } else {
+    } else {
 
         window.location.href =
         "https://www.vaxomedia.com/intro";
 
-      }
-
     }
-  </script>
+
+}
+
+</script>
 
 </head>
 
@@ -32,13 +35,16 @@
 <h2>Verify First</h2>
 
 <div class="g-recaptcha"
-data-sitekey="6LcWHucsAAAAAGE104UF7U_D9jAAt3W8VYuUekOv">
+data-sitekey="6LdoIucsAAAAAFnW7Uxp9HBXPoUqjLPDoO053O1Q">
 </div>
 
 <br>
 
-<button type="button" onclick="unlockPage()">
+<button type="button"
+onclick="unlockPage()">
+
 Continue
+
 </button>
 
 </body>
